@@ -1,10 +1,15 @@
 package utils
+import (
+	"os"
+	"fmt"
+	"io"
+)
 
 /*
 Warning: this function will work correctly if there is priviledge to access 'path'
 */
 func FileExists(path string) bool {
-	_, err := os.Stat(_path)
+	_, err := os.Stat(path)
 	if err != nil && os.IsNotExist(err) {
 		return false
 
